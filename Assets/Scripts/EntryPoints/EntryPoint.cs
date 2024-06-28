@@ -7,6 +7,8 @@ namespace EntryPoints
     {
         protected virtual void Start()
         {
+            if (FindObjectOfType<Bootstrap>() == null)
+                Debug.LogWarning("Загрузка не из BootstrapScene");
             Debug.Log($"Scene {SceneManager.GetActiveScene().name} is loaded");
         }
     }
