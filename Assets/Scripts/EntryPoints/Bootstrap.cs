@@ -29,6 +29,7 @@ namespace EntryPoints
                 return;
             foreach (GameObject service in _prefabsService)
                 DontDestroyOnLoad(Instantiate(service));
+            Debug.Log("Services загрузились.");
         }
 
         private void InitGameMenu() =>
