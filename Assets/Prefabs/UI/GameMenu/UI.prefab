@@ -293,7 +293,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3273869719744288896}
+      - m_Target: {fileID: 6695682783946517416}
         m_TargetAssemblyTypeName: UI.Mediator, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 3
@@ -314,7 +314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3692011413428822021}
-  - component: {fileID: 3273869719744288896}
+  - component: {fileID: 6695682783946517416}
   m_Layer: 5
   m_Name: Mediator
   m_TagString: Untagged
@@ -341,7 +341,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3273869719744288896
+--- !u!114 &6695682783946517416
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7687773557337926277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e334a09a556089f47a18e2601d41e351, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b28649901b1a78448660d2291b75cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &9024435519544090311

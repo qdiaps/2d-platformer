@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace EntryPoints
 {
@@ -6,12 +7,14 @@ namespace EntryPoints
     {
         [SerializeField] private GameObject _prefabPlayer;
         [SerializeField] private GameObject[] _prefabsStatic;
+        [SerializeField] private GameObject _prefabUI;
 
         protected override void Start()
         {
             base.Start();
-            CreatePlayer();
             CreateStaticObjects();
+            CreateUI();
+            CreatePlayer();
         }
 
         private void CreatePlayer()
@@ -23,6 +26,11 @@ namespace EntryPoints
         {
             foreach (GameObject prefab in _prefabsStatic)
                 Instantiate(prefab);
+        }
+        
+        private void CreateUI()
+        {
+            Instantiate(_prefabUI);
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 namespace UI
 {
-    public class Mediator : MonoBehaviour
+    public abstract class Mediator : MonoBehaviour
     {
         public void ChangeScene(int index)
         {

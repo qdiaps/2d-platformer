@@ -26,6 +26,12 @@ namespace Core.Player
             InitInput();
         }
 
+        private void OnDestroy()
+        {
+            _inputService.OnHorizontalInput -= Move;
+            _inputService.OnJumpInput -= Jump;
+        }
+
         private void InitInput()
         {
             var input = FindObjectOfType<Input>() ?? throw new Exception("Input Service небыл найден на сцене.");
