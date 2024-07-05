@@ -7,30 +7,27 @@ namespace EntryPoints
     {
         [SerializeField] private GameObject _prefabPlayer;
         [SerializeField] private GameObject[] _prefabsStatic;
+        [SerializeField] private GameObject[] _prefabsDynamic;
         [SerializeField] private GameObject _prefabUI;
 
         protected override void Start()
         {
             base.Start();
-            CreateStaticObjects();
-            CreateUI();
-            CreatePlayer();
+            CreateObjects(_prefabsStatic);
+            CreateObject(_prefabUI);
+            CreateObjects(_prefabsDynamic);
+            CreateObject(_prefabPlayer);
         }
 
-        private void CreatePlayer()
+        private void CreateObject(GameObject prefab)
         {
-            Instantiate(_prefabPlayer);
+            Instantiate(prefab);
         }
 
-        private void CreateStaticObjects()
+        private void CreateObjects(GameObject[] prefabs)
         {
-            foreach (GameObject prefab in _prefabsStatic)
+            foreach (GameObject prefab in prefabs)
                 Instantiate(prefab);
-        }
-        
-        private void CreateUI()
-        {
-            Instantiate(_prefabUI);
         }
     }
 }
