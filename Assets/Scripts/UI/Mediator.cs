@@ -6,7 +6,7 @@ namespace UI
 {
     public abstract class Mediator : MonoBehaviour
     {
-        public void ChangeScene(int index)
+        public virtual void ChangeScene(int index)
         {
             if (index == SceneManager.GetActiveScene().buildIndex)
                 throw new ArgumentOutOfRangeException("index");

@@ -3,6 +3,7 @@ using Core.Anim;
 using UnityEngine;
 using Services.InputService;
 using Input = Services.InputService.Input;
+using Core.GameStates;
 
 namespace Core.Player
 {
@@ -17,12 +18,14 @@ namespace Core.Player
         private Rigidbody2D _rigidbody;
         private SpriteRenderer _spriteRenderer;
         private PlayerAnimation _animation;
+        private GameStateHandler _gameStateHandler;
         
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _animation = GetComponent<PlayerAnimation>();
+            _gameStateHandler = FindObjectOfType<GameStateHandler>();
             InitInput();
         }
 
@@ -42,6 +45,8 @@ namespace Core.Player
 
         private void Move(float input)
         {
+            if (CheckPause())
+                return;
             _animation.Move();
             transform.Translate(new Vector3(input * _speedMove, 0f));
             if (input < 0f)
@@ -52,11 +57,14 @@ namespace Core.Player
 
         private void Jump()
         {
-            if (_checkerBackground.IsBackground)
+            if (_checkerBackground.IsBackground && CheckPause() == false)
             {
                 _animation.Jump();
                 _rigidbody.AddForce(Vector2.up * _jumpForce * 100);
             }
         }
+
+        private bool CheckPause() =>
+            _gameStateHandler.GetTypeState() == typeof(PauseState);
     }
 }

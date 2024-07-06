@@ -8,4 +8,4 @@ PhysicsMaterial2D:
   m_PrefabAsset: {fileID: 0}
   m_Name: PlayerPhysicMaterial
   friction: 0
-  bounciness: 8.3
+  bounciness: 0
