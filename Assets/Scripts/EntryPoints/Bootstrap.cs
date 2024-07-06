@@ -11,6 +11,7 @@ namespace EntryPoints
 
         private void Awake()
         {
+            Application.targetFrameRate = 60;
             if (SceneManager.GetActiveScene().buildIndex != _indexBootstrapScene)
                 return;
             DontDestroyOnLoad(this);
