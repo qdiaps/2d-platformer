@@ -4,7 +4,7 @@ namespace Services.InputService
 {
     public abstract class InputReader : MonoBehaviour
     {
-        private void Update()
+        private void FixedUpdate()
         {
             CheckHorizontalInput();
             CheckJumpInput();
