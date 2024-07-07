@@ -1,5 +1,6 @@
 ﻿using Core.GameStates;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -7,6 +8,7 @@ namespace UI
     {
         [SerializeField] private GameObject _gameOverMenu;
         [SerializeField] private GameObject _winMenu;
+        [SerializeField] private Image[] _cherrys;
 
         private GameStateHandler _gameStateHandler;
 
@@ -31,5 +33,8 @@ namespace UI
 
         public void SetPlay() =>
             _gameStateHandler.SetState<PlayState>();
+
+        public void AddCherry(int index) => 
+            _cherrys[index].color = new(_cherrys[index].color.r, _cherrys[index].color.g, _cherrys[index].color.b, 255);
     }
 }

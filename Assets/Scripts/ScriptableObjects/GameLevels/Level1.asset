@@ -18,5 +18,6 @@ MonoBehaviour:
   - {fileID: 2664866620659786427, guid: 1f703e482fd65b14c97e8935abb1edd9, type: 3}
   - {fileID: 628953925950935142, guid: dc3e75a80efa4a84da813233ff8a2794, type: 3}
   - {fileID: 6859941099743679307, guid: 325e1271bf8e29248b11750c226a061b, type: 3}
+  - {fileID: 4434017727816228168, guid: fdc29431642fd7543a0e4c83fd7f9c5e, type: 3}
   DynamicObjects:
   - {fileID: 920521956543449449, guid: ad8c0359cd008fb40b7ac908c0029043, type: 3}

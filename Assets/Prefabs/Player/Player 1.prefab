@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5517675784477926541}
   - component: {fileID: 2810889584918169599}
   - component: {fileID: 1362413653711682979}
+  - component: {fileID: -8422622399973851136}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 72de0c64f2c6a498096698322c976a67, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -209,6 +210,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9d4e0a370f64885913953ce034926a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8422622399973851136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914903221823251905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450562c093bf92744928084447d90c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5890702746151038242
@@ -368,9 +381,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.073967636, y: 0.06871045}
+  m_Offset: {x: -0.045215845, y: 0.10896289}
   serializedVersion: 2
-  m_Radius: 0.16817188
+  m_Radius: 0.32918268
 --- !u!114 &5499152967798241560
 MonoBehaviour:
   m_ObjectHideFlags: 0
