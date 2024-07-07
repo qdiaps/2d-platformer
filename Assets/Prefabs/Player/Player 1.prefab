@@ -325,7 +325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6975512714087615236}
-  - component: {fileID: 2760585156139738876}
+  - component: {fileID: 6070320159224708521}
   - component: {fileID: 5499152967798241560}
   m_Layer: 0
   m_Name: CheckerBackground
@@ -349,8 +349,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5467978500751154814}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &2760585156139738876
-CircleCollider2D:
+--- !u!61 &6070320159224708521
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -381,9 +381,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.045215845, y: 0.10896289}
+  m_Offset: {x: -0.14027691, y: 0.01033622}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.32918268
+  m_Size: {x: 1.002953, y: 0.2823733}
+  m_EdgeRadius: 0
 --- !u!114 &5499152967798241560
 MonoBehaviour:
   m_ObjectHideFlags: 0

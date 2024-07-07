@@ -4,6 +4,9 @@ using UnityEngine;
 using Services.InputService;
 using Input = Services.InputService.Input;
 using Core.GameStates;
+using UI;
+using Core.Enemyes;
+using Core.Triggers;
 
 namespace Core.Player
 {
@@ -19,6 +22,7 @@ namespace Core.Player
         private SpriteRenderer _spriteRenderer;
         private PlayerAnimation _animation;
         private GameStateHandler _gameStateHandler;
+        private GameLevelMediator _mediator;
         
         private void Start()
         {
@@ -26,6 +30,7 @@ namespace Core.Player
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _animation = GetComponent<PlayerAnimation>();
             _gameStateHandler = FindObjectOfType<GameStateHandler>();
+            _mediator = FindObjectOfType<GameLevelMediator>();
             InitInput();
         }
 
@@ -33,6 +38,16 @@ namespace Core.Player
         {
             _inputService.OnHorizontalInput -= Move;
             _inputService.OnJumpInput -= Jump;
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.TryGetComponent(out EnemyMovement enemy) || 
+                collision.TryGetComponent(out DeadZone deadZone))
+            {
+                _mediator.SetPause();
+                _mediator.ShowGameOverMenu();
+            }
         }
 
         private void InitInput()

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8822619164327577590}
   - component: {fileID: 1084339562959853260}
-  - component: {fileID: 6560202527206714146}
+  - component: {fileID: 2291167138165777355}
   m_Layer: 0
   m_Name: GameOverZone
   m_TagString: Untagged
@@ -79,7 +79,7 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &6560202527206714146
+--- !u!114 &2291167138165777355
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6367010861964269649}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ff89b1ac16913b428b96582b112483d, type: 3}
+  m_Script: {fileID: 11500000, guid: 19e1b753d8af44147bef3792b7f2d828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6513414454120931618

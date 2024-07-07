@@ -1,4 +1,5 @@
 using Core.Anim;
+using Core.Triggers;
 using UnityEngine;
 
 namespace Core.Player
