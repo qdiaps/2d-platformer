@@ -13,6 +13,9 @@ namespace Core.Player
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerMovement : MonoBehaviour
     {
+        public event Action OnJump;
+        public event Action OnDead;
+
         [SerializeField] private float _speedMove;
         [SerializeField] private float _jumpForce;
         [SerializeField] private CheckerBackground _checkerBackground;
@@ -42,9 +45,10 @@ namespace Core.Player
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.TryGetComponent(out EnemyMovement enemy) || 
+            if (collision.TryGetComponent(out EnemyMovement enemy) ||
                 collision.TryGetComponent(out DeadZone deadZone))
             {
+                OnDead?.Invoke();
                 _mediator.SetPause();
                 _mediator.ShowGameOverMenu();
             }
@@ -74,6 +78,7 @@ namespace Core.Player
         {
             if (_checkerBackground.IsBackground && CheckPause() == false)
             {
+                OnJump?.Invoke();
                 _animation.Jump();
                 _rigidbody.AddForce(Vector2.up * _jumpForce * 100);
             }

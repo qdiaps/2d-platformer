@@ -1,3 +1,4 @@
+using System;
 using UI;
 using UnityEngine;
 
@@ -5,6 +6,8 @@ namespace Core.Player
 {
     public class PlayerStorage : MonoBehaviour
     {
+        public event Action OnPickUpCherry;
+
         private const int MaxCherry = 3;
 
         private int _cherryCount = 0;
@@ -17,6 +20,7 @@ namespace Core.Player
         {
             if (_cherryCount > MaxCherry)
                 return;
+            OnPickUpCherry?.Invoke();
             _mediator.AddCherry(_cherryCount);
             _cherryCount++;
         }
