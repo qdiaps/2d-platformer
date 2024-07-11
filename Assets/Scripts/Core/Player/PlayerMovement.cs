@@ -2,7 +2,7 @@ using System;
 using Core.Anim;
 using UnityEngine;
 using Services.InputService;
-using Input = Services.InputService.Input;
+using InputService = Services.InputService.InputService;
 using Core.GameStates;
 using UI;
 using Core.Enemyes;
@@ -56,13 +56,13 @@ namespace Core.Player
 
         private void InitInput()
         {
-            var input = FindObjectOfType<Input>() ?? throw new Exception("Input Service небыл найден на сцене.");
+            var input = FindObjectOfType<InputService>() ?? throw new Exception("Input Service небыл найден на сцене.");
             _inputService = input.GetInput();
             _inputService.OnHorizontalInput += Move;
             _inputService.OnJumpInput += Jump;
         }
 
-        private void Move(float input)
+        private void Move(int input)
         {
             if (CheckPause())
                 return;

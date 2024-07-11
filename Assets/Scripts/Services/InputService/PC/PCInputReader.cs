@@ -1,32 +1,41 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Services.InputService.PC
 {
-    public class PCInputReader : InputReader, IInputCallback
+    public class PCInputReader : MonoBehaviour, IInputCallback
     {
-        public event Action<float> OnHorizontalInput;
+        public event Action<int> OnHorizontalInput;
         public event Action OnJumpInput;
 
-        private const string Horizontal = "Horizontal";
+        private InputSystem _inputSystem;
 
-        protected override void CheckHorizontalInput()
+        private void Start()
         {
-            float input = ReadHorizontalInput();
-            if (input != 0f)
-                OnHorizontalInput?.Invoke(input);
+            _inputSystem = new InputSystem();
+            _inputSystem.Enable();
+            _inputSystem.Gameplay.Jump.performed += JumpHandler;
         }
 
-        private float ReadHorizontalInput() =>
-            UnityEngine.Input.GetAxis(Horizontal);
-
-        protected override void CheckJumpInput()
+        private void OnDestroy()
         {
-            if (ReadKeyDownInput(KeyCode.Space))
-                OnJumpInput?.Invoke();
+            _inputSystem.Gameplay.Jump.performed -= JumpHandler;
         }
 
-        private bool ReadKeyDownInput(KeyCode key) =>
-            UnityEngine.Input.GetKeyDown(key);
+        private void FixedUpdate()
+        {
+            HorizontalInputHandler();
+        }
+
+        private void JumpHandler(InputAction.CallbackContext obj) =>
+            OnJumpInput?.Invoke();
+
+        private void HorizontalInputHandler()
+        {
+            var direction = _inputSystem.Gameplay.Movement.ReadValue<Vector2>();
+            if (direction.x != 0)
+                OnHorizontalInput?.Invoke((int)direction.x);
+        }
     }
 }

@@ -2,20 +2,20 @@ using UnityEngine;
 
 namespace Services.InputService
 {
-    public class Input : MonoBehaviour
+    public class InputService : MonoBehaviour
     {
         [SerializeField] private GameObject _prefabPCInput;
 
-        private IInputCallback _input;
+        private IInputCallback _currentInput;
         
         private void Start()
         {
             var inputObject = Instantiate(_prefabPCInput);
             DontDestroyOnLoad(inputObject);
-            _input = inputObject.GetComponent<IInputCallback>();
+            _currentInput = inputObject.GetComponent<IInputCallback>();
         }
 
         public IInputCallback GetInput() =>
-            _input;
+            _currentInput;
     }
 }

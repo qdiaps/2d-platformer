@@ -4,7 +4,7 @@ namespace Services.InputService
 {
     public interface IInputCallback
     {
-        event Action<float> OnHorizontalInput;
+        event Action<int> OnHorizontalInput;
         event Action OnJumpInput;
     }
 }
