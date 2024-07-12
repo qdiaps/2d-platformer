@@ -346,6 +346,61 @@ MonoBehaviour:
   - Language: UK
     Text: "\u041D\u043E\u0432\u0430 \u0433\u0440\u0430"
     Object: {fileID: 0}
+--- !u!1 &4203647568988696390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1382316074786241822}
+  - component: {fileID: 7238811145332311285}
+  m_Layer: 0
+  m_Name: ChangeInputType
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1382316074786241822
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4203647568988696390}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2093546440627009544}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7238811145332311285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4203647568988696390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb15fa0e7301ff849bf4d6dcede7c12b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: 0
+  entries:
+  - Language: RU
+    Text: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0442\u0438\u043F \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F"
+    Object: {fileID: 0}
+  - Language: EN
+    Text: Select control type
+    Object: {fileID: 0}
+  - Language: UK
+    Text: "\u0412\u0438\u0431\u0435\u0440\u0456\u0442\u044C \u0442\u0438\u043F \u043A\u0435\u0440\u0443\u0432\u0430\u043D\u043D\u044F"
+    Object: {fileID: 0}
 --- !u!1 &5751485679782100429
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,6 +624,7 @@ Transform:
   m_Children:
   - {fileID: 3993704321088002422}
   - {fileID: 4616315015281804100}
+  - {fileID: 1382316074786241822}
   m_Father: {fileID: 3032750169528406981}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8664589516347773892

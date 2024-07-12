@@ -6,5 +6,7 @@ namespace Services.InputService
     {
         event Action<int> OnHorizontalInput;
         event Action OnJumpInput;
+
+        void Init();
     }
 }
