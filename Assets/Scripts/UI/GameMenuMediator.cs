@@ -1,4 +1,5 @@
 ﻿using Services.InputService;
+using UnityEngine;
 
 namespace UI
 {
@@ -17,5 +18,8 @@ namespace UI
 
         public void SetMobileInput() =>
             _inputService.ChangeInput(InputType.Mobile);
+
+        public void ExitGame() =>
+            Application.Quit();
     }
 }
