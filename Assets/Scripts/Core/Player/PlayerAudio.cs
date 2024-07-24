@@ -13,6 +13,7 @@ namespace Core.Player
         private AudioSource _audio;
         private PlayerStorage _storage;
         private PlayerMovement _movement;
+        private PlayerDead _dead;
         private WinGame _winGame;
 
         private void Start()
@@ -20,10 +21,11 @@ namespace Core.Player
             _audio = GetComponent<AudioSource>();
             _storage = GetComponent<PlayerStorage>();
             _movement = GetComponent<PlayerMovement>();
+            _dead = GetComponent<PlayerDead>();
             _winGame = FindObjectOfType<WinGame>();
 
             _movement.OnJump += Jump;
-            _movement.OnDead += Dead;
+            _dead.OnDead += Dead;
             _storage.OnPickUpCherry += PickUpCherry;
             _winGame.OnWin += StopSound;
         }
@@ -31,7 +33,7 @@ namespace Core.Player
         private void OnDestroy()
         {
             _movement.OnJump -= Jump;
-            _movement.OnDead -= Dead;
+            _dead.OnDead -= Dead;
             _storage.OnPickUpCherry -= PickUpCherry;
             _winGame.OnWin -= StopSound;
         }

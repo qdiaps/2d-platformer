@@ -6,7 +6,6 @@ using InputService = Services.InputService.InputService;
 using Core.GameStates;
 using UI;
 using Core.Enemyes;
-using Core.Triggers;
 
 namespace Core.Player
 {
@@ -14,7 +13,6 @@ namespace Core.Player
     public class PlayerMovement : MonoBehaviour
     {
         public event Action OnJump;
-        public event Action OnDead;
 
         [SerializeField] private float _speedMove;
         [SerializeField] private float _jumpForce;
@@ -45,10 +43,8 @@ namespace Core.Player
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.TryGetComponent(out EnemyMovement enemy) ||
-                collision.TryGetComponent(out DeadZone deadZone))
+            if (collision.TryGetComponent(out EnemyMovement enemy))
             {
-                OnDead?.Invoke();
                 _mediator.SetPause();
                 _mediator.ShowGameOverMenu();
             }

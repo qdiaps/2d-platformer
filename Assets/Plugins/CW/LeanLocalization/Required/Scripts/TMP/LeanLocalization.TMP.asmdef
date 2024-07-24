@@ -2,7 +2,9 @@
     "name": "LeanLocalization.TMP",
     "references": [
         "LeanLocalization",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "CW.Common",
+        "LeanCommon"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

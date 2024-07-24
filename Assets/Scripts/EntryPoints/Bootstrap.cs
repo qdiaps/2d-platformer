@@ -18,15 +18,10 @@ namespace EntryPoints
         {
             Application.targetFrameRate = 60;
             if (SceneManager.GetActiveScene().buildIndex != _indexBootstrapScene)
-                return;
+                return;    
             DontDestroyOnLoad(this);
-            
-            // init LoadingScreen
-            
             InitServices();
             InitGameMenu();
-
-            // hide LoadingScreen
         }
 
         private void InitServices()
